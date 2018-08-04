@@ -12,3 +12,17 @@ C:\Users\Priyantha\Desktop\SC\ShoppingCart\ShoppingCart.Infrastructure\bin\Debug
 C:\Users\Priyantha\Desktop\SC\ShoppingCart\ShoppingCart.Infrastructure\obj\Debug\ShoppingCart.Infrastructure.csproj.CopyComplete
 C:\Users\Priyantha\Desktop\SC\ShoppingCart\ShoppingCart.Infrastructure\obj\Debug\ShoppingCart.Infrastructure.dll
 C:\Users\Priyantha\Desktop\SC\ShoppingCart\ShoppingCart.Infrastructure\obj\Debug\ShoppingCart.Infrastructure.pdb
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\bin\Debug\ShoppingCart.Infrastructure.dll.config
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\bin\Debug\ShoppingCart.Infrastructure.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\bin\Debug\ShoppingCart.Infrastructure.pdb
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\bin\Debug\EntityFramework.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\bin\Debug\ShoppingCart.Core.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\bin\Debug\ShoppingCart.Core.pdb
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\bin\Debug\EntityFramework.xml
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\obj\Debug\ShoppingCart.Infrastructure.csprojResolveAssemblyReference.cache
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\obj\Debug\ShoppingCart.Infrastructure.csproj.CoreCompileInputs.cache
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\obj\Debug\ShoppingCart.Infrastructure.csproj.CopyComplete
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\obj\Debug\ShoppingCart.Infrastructure.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Infrastructure\obj\Debug\ShoppingCart.Infrastructure.pdb

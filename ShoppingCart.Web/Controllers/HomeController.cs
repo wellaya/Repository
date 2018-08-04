@@ -11,14 +11,15 @@ namespace ShoppingCart.Web.Controllers
 {
     public class HomeController : Controller
     {
-        IProductRepository db;
-        public HomeController(IProductRepository db)
+        IProductService service;
+        public HomeController(IProductService service)
         {
 
-            this.db = db;
+            this.service = service;
         }
         public ActionResult Index()
         {
+            var prods = this.service.GetProducts().ToList();
             return View();
         }
 
@@ -54,23 +55,23 @@ namespace ShoppingCart.Web.Controllers
                     }).ToList();
 
                 
-                    foreach (var i in productList)
-                    {
-                        var v = db.GetProducts().Where(a => a.Id.Equals(i.Id)).FirstOrDefault();
+                    //foreach (var i in productList)
+                    //{
+                    //    var v = db.GetProducts().Where(a => a.Id.Equals(i.Id)).FirstOrDefault();
 
-                        if (v != null)
-                        {
-                            v.Id = i.Id;
-                            v.Name = i.Name;
-                            v.Price = i.Price;
-                           // v.Quantity = i.Quantity;
-                        }
-                        else
-                        {
-                            db.Add(i);
-                        }
+                    //    if (v != null)
+                    //    {
+                    //        v.Id = i.Id;
+                    //        v.Name = i.Name;
+                    //        v.Price = i.Price;
+                    //       // v.Quantity = i.Quantity;
+                    //    }
+                    //    else
+                    //    {
+                    //        db.Add(i);
+                    //    }
                         
-                    }
+                    //}
                 
                 ViewBag.Success = "File uploaded successfully..";
             }
