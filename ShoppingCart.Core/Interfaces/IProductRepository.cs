@@ -15,5 +15,6 @@ namespace ShoppingCart.Core.Interfaces
         IEnumerable<Product> GetProducts();
         Product FindById(int Id);
         IEnumerable<Product> ReadProductData();
+        void WriteFile();
     }
 }

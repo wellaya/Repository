@@ -27,7 +27,8 @@ namespace ShoppingCart.Web.Controllers
         public ActionResult Index()
         {
             //return View(db.Products.ToList());
-            db.ReadProductData();
+            db.WriteFile();
+            //db.ReadProductData();
             return View(db.GetProducts());
         }
 
