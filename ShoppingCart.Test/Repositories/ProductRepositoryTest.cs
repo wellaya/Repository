@@ -4,7 +4,7 @@ using ShoppingCart.Infrastructure;
 using System.Linq;
 
 
-namespace ShoppingCart.Test
+namespace ShoppingCart.Test.Repositories
 {
     [TestClass]
     public class ProductRepositoryTest
@@ -24,7 +24,7 @@ namespace ShoppingCart.Test
             var result = Repo.GetProducts();
             Assert.IsNotNull(result);
             var numberOfRecords = result.ToList().Count;
-            Assert.AreEqual(2, numberOfRecords);
+            Assert.AreEqual(16, numberOfRecords);
         }
 
         [TestMethod]

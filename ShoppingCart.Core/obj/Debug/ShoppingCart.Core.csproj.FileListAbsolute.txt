@@ -9,3 +9,4 @@ G:\My\SC\ShoppingCart\ShoppingCart.Core\bin\Debug\ShoppingCart.Core.pdb
 G:\My\SC\ShoppingCart\ShoppingCart.Core\obj\Debug\ShoppingCart.Core.csproj.CoreCompileInputs.cache
 G:\My\SC\ShoppingCart\ShoppingCart.Core\obj\Debug\ShoppingCart.Core.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Core\obj\Debug\ShoppingCart.Core.pdb
+G:\My\SC\ShoppingCart\ShoppingCart.Core\obj\Debug\ShoppingCart.Core.csprojResolveAssemblyReference.cache

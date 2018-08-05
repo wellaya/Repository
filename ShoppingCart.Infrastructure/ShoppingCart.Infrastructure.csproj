@@ -54,6 +54,7 @@
     <Compile Include="ProductInitalizeDB.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCartRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShoppingCart.Core\ShoppingCart.Core.csproj">
