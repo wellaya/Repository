@@ -49,10 +49,17 @@ namespace ShoppingCart.Core
             return cartRepository.GetTotal(id);
         }
 
-        //public void RemoveItem(string removeCartID, int removeProductID)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public ShoppingCartRemoveViewModel RemoveItem(string removeCartID, int removeProductID)
+        {
+            ShoppingCartRemoveViewModel viewModel = new ShoppingCartRemoveViewModel();
+            viewModel.ItemCount = cartRepository.RemoveItem(removeCartID, removeProductID);
+            var removedItem = productRepository.FindById(removeProductID);
+            viewModel.Message = "One (1) " + removedItem.Name +" has been removed from your shopping cart.";
+            viewModel.DeleteId = removeProductID;
+            viewModel.CartCount = cartRepository.GetCount(removeCartID);
+            viewModel.CartTotal = cartRepository.GetTotal(removeCartID);
+            return viewModel;
+        }
 
         //public void UpdateItem(string updateCartID, int updateProductID, int quantity)
         //{
@@ -76,8 +83,8 @@ namespace ShoppingCart.Core
         {
             ShoppingCartRemoveViewModel viewModel = new ShoppingCartRemoveViewModel();
             viewModel.ItemCount = cartRepository.AddToCart(productId, cartId);
-            //var addedItem = null;//productRepository.FindById(productId);
-            //viewModel.Message = addedItem.Name + " has been added to your shopping cart.";
+            var addedItem = productRepository.FindById(productId);
+            viewModel.Message = addedItem.Name + " has been added to your shopping cart.";
             viewModel.DeleteId = productId;
             viewModel.CartCount = cartRepository.GetCount(cartId);
             viewModel.CartTotal = cartRepository.GetTotal(cartId);

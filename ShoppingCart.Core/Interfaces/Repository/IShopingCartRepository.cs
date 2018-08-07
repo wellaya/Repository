@@ -14,7 +14,7 @@ namespace ShoppingCart.Core.Interfaces
 
         decimal GetTotal(string id);
 
-        //void RemoveItem(string removeCartID, int removeProductID);
+        int RemoveItem(string removeCartID, int removeProductID);
 
         //void UpdateItem(string updateCartID, int updateProductID, int quantity);
 

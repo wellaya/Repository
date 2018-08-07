@@ -24,18 +24,24 @@ namespace ShoppingCart.Web.Controllers
             return View(viewModel);
         }
 
-        // GET: /Store/AddToCart/5
+       
         [HttpPost]
         public ActionResult AddToCart(int id)
         {
-            return View();
+            string Cartid = this.service.GetCartId(this.HttpContext);
+            var results = this.service.AddToCart(id, Cartid);
+            //return RedirectToAction("Index");
+            return Json(results);
         }
 
         // AJAX: /ShoppingCart/RemoveFromCart/5
         [HttpPost]
         public ActionResult RemoveFromCart(int id)
         {
-            return View();
+            string Cartid = this.service.GetCartId(this.HttpContext);
+            var results = this.service.RemoveItem(Cartid,id);
+            //return RedirectToAction("Index");
+            return Json(results);
         }
 
         [ChildActionOnly]

@@ -11,16 +11,7 @@ namespace ShoppingCart.Infrastructure
     public class ShoppingCartRepository : IShopingCartRepository
     {
         ProductContext context = new ProductContext();
-        //public void AddToCart(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public void EmptyCart()
-        //{
-        //    throw new NotImplementedException();
-        //}
-        
+                
         public List<Cart> GetCartItems(string id)
         {
             return context.Carts.Where(
@@ -36,11 +27,33 @@ namespace ShoppingCart.Infrastructure
 
             return total ?? decimal.Zero;
         }
-        
-        //public void RemoveItem(string removeCartID, int removeProductID)
-        //{
-        //    throw new NotImplementedException();
-        //}
+
+        public int RemoveItem(string removeCartID, int removeProductID)
+        {
+
+            var cartItem = context.Carts.Single(
+                cart => cart.CartId == removeCartID
+                && cart.ProductId == removeProductID);
+
+
+            int itemCount = 0;
+
+            if (cartItem != null)
+            {
+                if (cartItem.Count > 1)
+                {
+                    cartItem.Count--;
+                    itemCount = cartItem.Count;
+                }
+                else
+                {
+                    context.Carts.Remove(cartItem);
+                }
+                // Save changes
+                context.SaveChanges();
+            }
+            return itemCount;
+        }
 
         //public void UpdateItem(string updateCartID, int updateProductID, int quantity)
         //{

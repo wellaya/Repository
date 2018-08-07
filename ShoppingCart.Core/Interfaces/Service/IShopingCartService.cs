@@ -16,7 +16,7 @@ namespace ShoppingCart.Core.Interfaces
         //List<CartItem> GetCartItems();
         int GetCount(string id);
         //decimal GetTotal(string id);
-        //void RemoveItem(string removeCartID, int removeProductID);
+        ShoppingCartRemoveViewModel RemoveItem(string removeCartID, int removeProductID);
         //void UpdateItem(string updateCartID, int updateProductID, int quantity);
         //void EmptyCart();
         
