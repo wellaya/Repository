@@ -8,41 +8,83 @@ using System.Threading.Tasks;
 
 namespace ShoppingCart.Infrastructure
 {
-    public class ShoppingCartRepository : IShoppingCartRepository
+    public class ShoppingCartRepository : IShopingCartRepository
     {
-        public void AddToCart(int id)
+        ProductContext context = new ProductContext();
+        //public void AddToCart(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void EmptyCart()
+        //{
+        //    throw new NotImplementedException();
+        //}
+        
+        public List<Cart> GetCartItems(string id)
         {
-            throw new NotImplementedException();
+            return context.Carts.Where(
+               cart => cart.CartId == id).ToList();
         }
 
-        public void EmptyCart()
+        public decimal GetTotal(string id)
         {
-            throw new NotImplementedException();
+            decimal? total = (from cartItems in context.Carts
+                              where cartItems.CartId == id
+                              select (int?)cartItems.Count *
+                              cartItems.Product.Price).Sum();
+
+            return total ?? decimal.Zero;
+        }
+        
+        //public void RemoveItem(string removeCartID, int removeProductID)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void UpdateItem(string updateCartID, int updateProductID, int quantity)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public int GetCount(string id)
+        {
+            // Get the count of each item in the cart and sum them up
+            int? count = (from cartItems in context.Carts
+                          where cartItems.CartId == id
+                          select (int?)cartItems.Count).Sum();
+            // Return 0 if all entries are null
+            return count ?? 0;
         }
 
-        public string GetCartId()
+        public int AddToCart(int prodcutId, string cartId)
         {
-            throw new NotImplementedException();
-        }
+            var cartItem = context.Carts.SingleOrDefault(
+                c => c.CartId == cartId
+                && c.ProductId == prodcutId);
 
-        public List<CartItem> GetCartItems()
-        {
-            throw new NotImplementedException();
-        }
+            if (cartItem == null)
+            {
+                // Create a new cart item if no cart item exists
+                cartItem = new Cart
+                {
+                    CartId = cartId,
+                    ProductId = prodcutId,
+                    DateCreated = DateTime.Now,
+                    Count = 1
+                };
+                context.Carts.Add(cartItem);
+            }
+            else
+            {
+                // If the item does exist in the cart, 
+                // then add one to the quantity
+                cartItem.Count++;
+            }
+            // Save changes
+            context.SaveChanges();
 
-        public decimal GetTotal()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveItem(string removeCartID, int removeProductID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateItem(string updateCartID, int updateProductID, int quantity)
-        {
-            throw new NotImplementedException();
+            return cartItem.Count;
         }
     }
 }

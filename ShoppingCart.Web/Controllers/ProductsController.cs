@@ -8,28 +8,26 @@ using System.Web;
 using System.Web.Mvc;
 using ShoppingCart.Core;
 using ShoppingCart.Core.Interfaces;
-using ShoppingCart.Infrastructure;
+
 
 namespace ShoppingCart.Web.Controllers
 {
     public class ProductsController : Controller
     {
-        //private ProductContext db = new ProductContext();
-        //private ProductRepository db = new ProductRepository();
-        IProductRepository db;
-        public ProductsController(IProductRepository db)
+        IProductService service;
+        public ProductsController(IProductService service)
         {
 
-            this.db = db;
+            this.service = service;
         }
 
         // GET: Products
         public ActionResult Index()
         {
             //return View(db.Products.ToList());
-            db.WriteFile();
+            service.WriteFile();
             //db.ReadProductData();
-            return View(db.GetProducts());
+            return View(service.GetProducts());
         }
 
         // GET: Products/Details/5
@@ -40,7 +38,7 @@ namespace ShoppingCart.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //Product product = db.Products.Find(id);
-            Product product = db.FindById(Convert.ToInt32(id));
+            Product product = service.FindById(Convert.ToInt32(id));
             if (product == null)
             {
                 return HttpNotFound();
@@ -59,13 +57,13 @@ namespace ShoppingCart.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Price,inStock")] Product product)
+        public ActionResult Create([Bind(Include = "Id,Name,Price,inStock,Description")] Product product)
         {
             if (ModelState.IsValid)
             {
                 //db.Products.Add(product);
                 //db.SaveChanges();
-                db.Add(product);
+                service.Add(product);
                 return RedirectToAction("Index");
             }
 
@@ -79,7 +77,7 @@ namespace ShoppingCart.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.FindById(Convert.ToInt32(id));
+            Product product = service.FindById(Convert.ToInt32(id));
             if (product == null)
             {
                 return HttpNotFound();
@@ -92,13 +90,13 @@ namespace ShoppingCart.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Price,inStock")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,Name,Price,inStock,Description")] Product product)
         {
             if (ModelState.IsValid)
             {
                 //db.Entry(product).State = EntityState.Modified;
                 //db.SaveChanges();
-                db.Edit(product);
+                service.Edit(product);
                 return RedirectToAction("Index");
             }
             return View(product);
@@ -111,7 +109,7 @@ namespace ShoppingCart.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.FindById(Convert.ToInt32(id));
+            Product product = service.FindById(Convert.ToInt32(id));
             if (product == null)
             {
                 return HttpNotFound();
@@ -124,10 +122,10 @@ namespace ShoppingCart.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.FindById(Convert.ToInt32(id));
+            Product product = service.FindById(Convert.ToInt32(id));
             //db.Products.Remove(product);
             //db.SaveChanges();
-            db.Remove(id);
+            service.Remove(id);
             return RedirectToAction("Index");
         }
 

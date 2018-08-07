@@ -14,7 +14,7 @@ namespace ShoppingCart.Core
         [MaxLength(100)]
         public string Name { get; set; }
         [Required]
-        public double? Price { get; set; }
+        public decimal Price { get; set; }
         public bool inStock { get; set; }
 
         public string ImagePath { get; set; }

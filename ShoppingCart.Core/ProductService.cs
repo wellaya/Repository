@@ -9,15 +9,46 @@ namespace ShoppingCart.Core
 {
     public class ProductService : IProductService
     {
-        IProductRepository db;
-        public ProductService(IProductRepository db)
+        IProductRepository repository;
+        public ProductService(IProductRepository repository)
         {
 
-            this.db = db;
+            this.repository = repository;
         }
+
+        public void Add(Product p)
+        {
+            repository.Add(p);
+        }
+
+        public void Edit(Product p)
+        {
+            repository.Edit(p);
+        }
+
+        public Product FindById(int Id)
+        {
+            return repository.FindById(Id);
+        }
+
         public IEnumerable<Product> GetProducts()
         {
-            return db.GetProducts();
+            return repository.GetProducts();
+        }
+
+        public IEnumerable<Product> ReadProductData()
+        {
+            return repository.ReadProductData();
+        }
+
+        public void Remove(int Id)
+        {
+            repository.Remove(Id);
+        }
+
+        public void WriteFile()
+        {
+            repository.WriteFile();
         }
     }
 }

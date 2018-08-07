@@ -11,15 +11,15 @@ namespace ShoppingCart.Web.Controllers
 {
     public class HomeController : Controller
     {
-        IProductService service;
-        public HomeController(IProductService service)
+        IProductRepository service;
+        public HomeController(IProductRepository service)
         {
 
             this.service = service;
         }
         public ActionResult Index()
         {
-            var prods = this.service.GetProducts().ToList();
+            //var prods = this.service.GetProducts().ToList();
             return View();
         }
 
@@ -50,7 +50,7 @@ namespace ShoppingCart.Web.Controllers
                     {
                         Id = Convert.ToInt32(product.Element("id").Value),
                         Name = product.Element("name").Value,
-                        Price = Convert.ToDouble(product.Element("price").Value),
+                        Price = Convert.ToDecimal(product.Element("price").Value),
                        // Quantity = Convert.ToInt32(product.Element("quantity").Value)
                     }).ToList();
 

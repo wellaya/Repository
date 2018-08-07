@@ -102,6 +102,12 @@ C:\Users\Priyantha\Desktop\SC\ShoppingCart\ShoppingCart.Web\bin\Unity.Abstractio
 C:\Users\Priyantha\Desktop\SC\ShoppingCart\ShoppingCart.Web\bin\Unity.Container.dll
 C:\Users\Priyantha\Desktop\SC\ShoppingCart\ShoppingCart.Web\bin\Unity.Mvc.dll
 C:\Users\Priyantha\Desktop\SC\ShoppingCart\ShoppingCart.Web\bin\WebActivatorEx.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\System.IO.Compression.dll
+G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\VBCSCompiler.exe
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\ApplicationInsights.config
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\ShoppingCart.Web.dll.config
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\ShoppingCart.Web.dll
@@ -113,13 +119,9 @@ G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\csi.exe
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\csi.exe.config
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\csi.rsp
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.CSharp.Core.targets
-G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -129,7 +131,6 @@ G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\System.Console.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\System.Diagnostics.Process.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
-G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\System.IO.Compression.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\System.IO.FileSystem.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -152,7 +153,6 @@ G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\vbc.exe
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\vbc.exe.config
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\vbc.rsp
-G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\VBCSCompiler.exe
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\roslyn\VBCSCompiler.exe.config
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\Antlr3.Runtime.dll
 G:\My\SC\ShoppingCart\ShoppingCart.Web\bin\EntityFramework.dll

@@ -47,6 +47,8 @@ namespace ShoppingCart.Web
             // TODO: Register your type's mappings here.
             container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IProductService, ProductService>();
+            container.RegisterType<IShopingCartRepository, ShoppingCartRepository>();
+            container.RegisterType<IShopingCartService, ShopingCartService>();
         }
     }
 }
