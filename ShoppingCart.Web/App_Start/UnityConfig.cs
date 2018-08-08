@@ -1,5 +1,7 @@
 using ShoppingCart.Core;
 using ShoppingCart.Core.Interfaces;
+using ShoppingCart.Core.Interfaces.Repository;
+using ShoppingCart.Core.Interfaces.Service;
 using ShoppingCart.Infrastructure;
 using System;
 
@@ -49,6 +51,8 @@ namespace ShoppingCart.Web
             container.RegisterType<IProductService, ProductService>();
             container.RegisterType<IShopingCartRepository, ShoppingCartRepository>();
             container.RegisterType<IShopingCartService, ShopingCartService>();
+            container.RegisterType<IOrderRepository, OrderRepository>();
+            container.RegisterType<IOrderService, OrderService>();
         }
     }
 }

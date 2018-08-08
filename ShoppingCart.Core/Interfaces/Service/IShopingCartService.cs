@@ -13,12 +13,10 @@ namespace ShoppingCart.Core.Interfaces
         ShoppingCartRemoveViewModel AddToCart(int productId, string cartId);
         string GetCartId(HttpContextBase context);
         ShoppingCartViewModel GetCart(string id);
-        //List<CartItem> GetCartItems();
+        List<Cart> GetCartItems(string id);
         int GetCount(string id);
-        //decimal GetTotal(string id);
         ShoppingCartRemoveViewModel RemoveItem(string removeCartID, int removeProductID);
-        //void UpdateItem(string updateCartID, int updateProductID, int quantity);
-        //void EmptyCart();
+        void EmptyCart(string id);
         
     }
 }

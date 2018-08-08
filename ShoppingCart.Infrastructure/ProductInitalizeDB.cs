@@ -14,8 +14,6 @@ namespace ShoppingCart.Infrastructure
         {
             GetCategories().ForEach(c => context.Categories.Add(c));
             GetProducts().ForEach(p => context.Products.Add(p));
-            //context.Products.Add(new Product { Id = 1, Name = "Rice", inStock = true, Price = 30 });
-            //context.Products.Add(new Product { Id = 2, Name = "Sugar", inStock = false, Price = 40 });
             context.SaveChanges();
             base.Seed(context);
         }

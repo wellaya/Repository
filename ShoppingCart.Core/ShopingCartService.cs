@@ -44,11 +44,6 @@ namespace ShoppingCart.Core
             return cartRepository.GetCartItems(id);
         }
 
-        public decimal GetTotal(string id)
-        {
-            return cartRepository.GetTotal(id);
-        }
-
         public ShoppingCartRemoveViewModel RemoveItem(string removeCartID, int removeProductID)
         {
             ShoppingCartRemoveViewModel viewModel = new ShoppingCartRemoveViewModel();
@@ -60,12 +55,7 @@ namespace ShoppingCart.Core
             viewModel.CartTotal = cartRepository.GetTotal(removeCartID);
             return viewModel;
         }
-
-        //public void UpdateItem(string updateCartID, int updateProductID, int quantity)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
+        
         public ShoppingCartViewModel GetCart(string id)
         {
             ShoppingCartViewModel viewModel = new ShoppingCartViewModel();
@@ -78,7 +68,6 @@ namespace ShoppingCart.Core
         {
             return this.cartRepository.GetCount(id);
         }
-
         public ShoppingCartRemoveViewModel AddToCart(int productId, string cartId)
         {
             ShoppingCartRemoveViewModel viewModel = new ShoppingCartRemoveViewModel();
@@ -89,6 +78,11 @@ namespace ShoppingCart.Core
             viewModel.CartCount = cartRepository.GetCount(cartId);
             viewModel.CartTotal = cartRepository.GetTotal(cartId);
             return viewModel;
+        }
+
+        public void EmptyCart(string id)
+        {
+            this.cartRepository.EmptyCart(id);
         }
     }
 }

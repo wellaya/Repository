@@ -54,12 +54,7 @@ namespace ShoppingCart.Infrastructure
             }
             return itemCount;
         }
-
-        //public void UpdateItem(string updateCartID, int updateProductID, int quantity)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
+        
         public int GetCount(string id)
         {
             // Get the count of each item in the cart and sum them up
@@ -98,6 +93,19 @@ namespace ShoppingCart.Infrastructure
             context.SaveChanges();
 
             return cartItem.Count;
+        }
+
+        public void EmptyCart(string id)
+        {
+            var cartItems = context.Carts.Where(
+                cart => cart.CartId == id);
+
+            foreach (var cartItem in cartItems)
+            {
+                context.Carts.Remove(cartItem);
+            }
+            // Save changes
+            context.SaveChanges();
         }
     }
 }
